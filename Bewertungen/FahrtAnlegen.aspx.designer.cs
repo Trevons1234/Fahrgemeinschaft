@@ -60,6 +60,24 @@ namespace Bewertungen
         protected global::System.Web.UI.WebControls.CustomValidator cv_Startzeit;
 
         /// <summary>
+        /// txt_Ankunft control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_Ankunft;
+
+        /// <summary>
+        /// cv_Ankunftszeit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator cv_Ankunftszeit;
+
+        /// <summary>
         /// txt_Preis control.
         /// </summary>
         /// <remarks>

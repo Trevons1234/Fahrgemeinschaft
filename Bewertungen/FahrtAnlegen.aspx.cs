@@ -17,6 +17,7 @@ namespace Bewertungen
         {
             string auto = Request.QueryString["auto"].ToString();
             ViewState["Auto"] = auto;
+            lbl_info.Text = "";
             if (Page.IsPostBack)
             {
 
@@ -25,7 +26,6 @@ namespace Bewertungen
 
         protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            lbl_info.Text = "Strecke beistrichgetrennt eingeben";
             string[] input;
             if(string.IsNullOrEmpty(txt_Strecke.Text))
             {
@@ -48,6 +48,7 @@ namespace Bewertungen
                 }
                 else
                 {
+                    lbl_info.Text = "Strecke beistrichgetrennt eingeben";
                     args.IsValid=false;
                 }
             }
@@ -56,16 +57,26 @@ namespace Bewertungen
         protected void btn_FahrtAnlegen_Click(object sender, EventArgs e)
         {
             int carid = GetCarId();
-            int userId = 69;
+            int userId = 31;
+            string preis = txt_Preis.Text;
+            if(string.IsNullOrEmpty(preis))
+            {
+                preis = "0";
+            }
             OdbcConnection conn = new OdbcConnection(connStrg);
             try
             {
                 conn.Open();
-                string sqlInsCmd = $"INSERT INTO fahrgemeinschaft_fahrt (Strecke,Startzeit,AutoId,UserId) VALUES('{txt_Strecke.Text}','{txt_Startzeit.Text}', '{carid}', '{userId}')";
+                string sqlInsCmd = $"INSERT INTO fahrgemeinschaft_fahrt (Strecke,Startzeit,Ankunft,Preis,AutoId,UserId) VALUES('{txt_Strecke.Text}','{txt_Startzeit.Text}','{txt_Ankunft.Text}','{preis}', '{carid}', '{userId}')";
                 OdbcCommand cmd = new OdbcCommand(sqlInsCmd, conn);
                 cmd.ExecuteNonQuery();
+                lbl_info.Text = "Fahrt wurde angelegt!";
             }
-            catch (Exception ex) {}
+            catch (Exception ex) 
+            {
+                Console.WriteLine(ex.Message);
+                lbl_info.Text = "Fahrt konnte nich angelegt werden";
+            }
         }
 
         private int GetCarId()
@@ -108,6 +119,16 @@ namespace Bewertungen
             }
             else args.IsValid = false ;
 
+        }
+
+        protected void cv_Ankunftszeit_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            string input = txt_Ankunft.Text;
+            if (input.Contains(':'))
+            {
+                args.IsValid = true;
+            }
+            else args.IsValid = false;
         }
     }
 }

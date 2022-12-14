@@ -13,5 +13,10 @@ namespace Bewertungen
         {
 
         }
+
+        protected void btn_suchen_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

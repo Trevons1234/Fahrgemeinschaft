@@ -18,5 +18,9 @@ namespace Bewertungen
         {
             Response.Redirect("/AutoHinzufügen.aspx");
         }
+        protected void ibnFahrtBuchen_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("FahrtAuswählen.aspx");
+        }
     }
 }

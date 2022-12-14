@@ -33,13 +33,13 @@ namespace Bewertungen
         protected global::System.Web.UI.WebControls.Label lblStartuhrzeit;
 
         /// <summary>
-        /// TextBox1 control.
+        /// txt_StartZeit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txt_StartZeit;
 
         /// <summary>
         /// idEnduhrzeit control.
@@ -51,13 +51,13 @@ namespace Bewertungen
         protected global::System.Web.UI.WebControls.Label idEnduhrzeit;
 
         /// <summary>
-        /// TextBox6 control.
+        /// txt_EndZeit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox6;
+        protected global::System.Web.UI.WebControls.TextBox txt_EndZeit;
 
         /// <summary>
         /// Raucher control.
@@ -114,6 +114,15 @@ namespace Bewertungen
         protected global::System.Web.UI.WebControls.RangeValidator RangeValidator2;
 
         /// <summary>
+        /// btn_suchen control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_suchen;
+
+        /// <summary>
         /// Bewertung control.
         /// </summary>
         /// <remarks>
@@ -150,12 +159,12 @@ namespace Bewertungen
         protected global::System.Web.UI.WebControls.CheckBox Sitzplätze;
 
         /// <summary>
-        /// TextBox5 control.
+        /// txt_Sitzplätze control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox5;
+        protected global::System.Web.UI.WebControls.TextBox txt_Sitzplätze;
     }
 }

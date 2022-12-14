@@ -33,12 +33,12 @@ namespace Bewertungen
         protected global::System.Web.UI.WebControls.ImageButton ibnFahrtAnlegen;
 
         /// <summary>
-        /// ibnFahrtAnlegen0 control.
+        /// ibnFahrtBuchen control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ibnFahrtAnlegen0;
+        protected global::System.Web.UI.WebControls.ImageButton ibnFahrtBuchen;
     }
 }

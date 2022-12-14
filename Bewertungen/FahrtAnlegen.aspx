@@ -16,6 +16,9 @@
             Startzeit:<asp:TextBox ID="txt_Startzeit" runat="server"></asp:TextBox>
             <asp:CustomValidator ID="cv_Startzeit" runat="server" ControlToValidate="txt_Startzeit" EnableClientScript="False" ErrorMessage="Bitte Zeit mit &quot;:&quot; getrennnt angeben" OnServerValidate="cv_Startzeit_ServerValidate"></asp:CustomValidator>
             <br />
+            Ankunft:<asp:TextBox ID="txt_Ankunft" runat="server"></asp:TextBox>
+            <asp:CustomValidator ID="cv_Ankunftszeit" runat="server" ErrorMessage="Bitte Zeit mit &quot;:&quot; getrennt eingeben" OnServerValidate="cv_Ankunftszeit_ServerValidate"></asp:CustomValidator>
+            <br />
             Preis:
             <asp:TextBox ID="txt_Preis" runat="server"></asp:TextBox>
         </div>

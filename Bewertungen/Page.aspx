@@ -28,7 +28,7 @@
                     <asp:ImageButton ID="ibnFahrtAnlegen" runat="server" Height="92px" ImageAlign="Left" ImageUrl="~/Screenshot 2022-11-28 095545.png" OnClick="ibnFahrtAnlegen_Click" Width="105px" />
                 </td>
                 <td class="auto-style2">
-                    <asp:ImageButton ID="ibnFahrtAnlegen0" runat="server" Height="92px" ImageAlign="Left" ImageUrl="~/Screenshot 2022-11-28 095545.png" OnClick="ibnFahrtAnlegen_Click" Width="105px" />
+                    <asp:ImageButton ID="ibnFahrtBuchen" runat="server" Height="92px" ImageAlign="Left" ImageUrl="~/Screenshot 2022-11-28 095545.png" OnClick="ibnFahrtBuchen_Click" Width="105px" />
                 </td>
                 <td>&nbsp;</td>
             </tr>

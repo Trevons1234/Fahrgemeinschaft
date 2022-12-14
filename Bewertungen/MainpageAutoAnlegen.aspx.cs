@@ -46,9 +46,10 @@ namespace Bewertungen
                 string sqlInsCmd = $"INSERT INTO fahrgemeinschaft_auto (Marke,Kennzeichen,Sitzplätze,Raucherauto) VALUES('{ddlAutomarke.SelectedItem.Text}','{txtKennzeichen.Text}',{txtAnzSitzpläze.Text},{rblRaucherauto.SelectedValue})";
                 OdbcCommand cmd = new OdbcCommand(sqlInsCmd, conn);
                 cmd.ExecuteNonQuery();
-                Response.Redirect("/FahrtAnlegen.aspx");
             }
             catch (Exception ex) { lblInfo.Text += ex.Message; }
+            string auto = ddlAutomarke.SelectedItem.Text + " "+ "("+txtKennzeichen.Text+")";
+            Response.Redirect("FahrtAnlegen.aspx?auto="+auto);
         }
     }
 }

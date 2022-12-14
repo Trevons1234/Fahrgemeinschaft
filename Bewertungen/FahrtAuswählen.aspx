@@ -90,13 +90,13 @@
                         <asp:Label ID="lblStartuhrzeit" runat="server" Text="Startuhrzeit"></asp:Label>
                     </td>
                     <td class="auto-style14">
-                        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txt_StartZeit" runat="server"></asp:TextBox>
                     </td>
                     <td class="auto-style15">
                         <asp:Label ID="idEnduhrzeit" runat="server" Text="Enduhrzeit"></asp:Label>
                     </td>
                     <td class="auto-style16">
-                        <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txt_EndZeit" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -123,7 +123,9 @@
                     <td class="auto-style10">
                         <asp:RangeValidator ID="RangeValidator2" runat="server" ControlToValidate="txtBewertung" EnableClientScript="False" ErrorMessage="Der Preis muss positiv sein" MaximumValue="5" MinimumValue="1"></asp:RangeValidator>
                     </td>
-                    <td>&nbsp;</td>
+                    <td>
+                        <asp:Button ID="btn_suchen" runat="server" OnClick="btn_suchen_Click" Text="Suchen" Width="155px" />
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style25">
@@ -146,7 +148,7 @@
                     <td class="auto-style31">
                         Sitzplätze</td>
                     <td class="auto-style32">
-                        <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txt_Sitzplätze" runat="server"></asp:TextBox>
                     </td>
                     <td class="auto-style29"></td>
                     <td class="auto-style33"></td>
