@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bewertungen", "Bewertungen\Bewertungen.csproj", "{2E8829B6-76FF-47FE-B178-DB1E7572B378}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Login", "Login\Login.csproj", "{E07D7BF4-51F0-4885-9204-8346CD261AA8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fahrgemeinschaft", "Login\Fahrgemeinschaft.csproj", "{E07D7BF4-51F0-4885-9204-8346CD261AA8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

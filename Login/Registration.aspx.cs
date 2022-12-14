@@ -168,11 +168,21 @@ namespace Fahrgemeinschaft
 
                 if (noErrors)
                 {
+                    int userId;
+
                     sqlCmd = $"SELECT MAX(UserId) FROM fahrgemeinschaft_user";
+                    object val = db.RunQueryScalar(sqlCmd);
 
-                    int userId = (int)db.RunQueryScalar(sqlCmd) + 1;
+                    if (val == DBNull.Value)
+                    {
+                        userId = 1;
+                    }
+                    else
+                    {
+                        userId = Convert.ToInt32(val) + 1;
+                    }
 
-                    sqlCmd = $"INSERT INTO fahrgemeinschaft_user VALUES('{txtFirstname.Text}','{txtLastname.Text}','{txtPhone.Text}','{txtBirthday.Text}',0,0," +
+                    sqlCmd = $"INSERT INTO fahrgemeinschaft_user VALUES('{userId}','{txtFirstname.Text}','{txtLastname.Text}','{txtPhone.Text}','{txtBirthday.Text}',0,0," +
                         $"'{txtFirstname.Text}.{txtLastname.Text}#{userId}','{txtPassword.Text}','{txtEMail.Text}')";
 
                     db.RunNonQuery(sqlCmd);

@@ -19,7 +19,7 @@
             <br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Label ID="Label3" runat="server" Text="Nachname: "></asp:Label>
-            &nbsp;&nbsp;&nbsp;
+            &nbsp; &nbsp;
             <asp:TextBox ID="txtLastname" runat="server"></asp:TextBox>
             <asp:Label ID="lblLastnameInfo" runat="server"></asp:Label>
             <br />
