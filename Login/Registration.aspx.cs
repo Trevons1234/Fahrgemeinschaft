@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data.Odbc;
 using DataBaseWrapper;
 using System.Web.Configuration;
+using System.Data;
 
 namespace Fahrgemeinschaft
 {
@@ -21,7 +22,6 @@ namespace Fahrgemeinschaft
         {
             db = new DataBase(connStrg);
             
-
             if (!Page.IsPostBack)
             {
                 lblFirstnameInfo.ForeColor = System.Drawing.Color.Red;
@@ -78,12 +78,12 @@ namespace Fahrgemeinschaft
             // E-Mail prüfen 
             if (txtEMail.Text.Length == 0)
             {
-                lblEMailInfo.Text = "E-Mail ist ein Pflichtfeld!";
+                lblEMailInfo.Text = "E-Mail Adresse ist ein Pflichtfeld!";
                 noErrors = false;
             }
             else if (!txtEMail.Text.Contains("@"))
             {
-                lblEMailInfo.Text = "Ungültige E-Mail";
+                lblEMailInfo.Text = "Ungültige E-Mail Adresse";
                 noErrors = false;
             }
             else
@@ -160,11 +160,42 @@ namespace Fahrgemeinschaft
                 noErrors = true;
             }
 
+            
+
 
             OdbcConnection conn = new OdbcConnection(connStrg);
             try
             {
                 conn.Open();
+
+
+                //Prüfen, ob E-Mail bereits existiert
+                sqlCmd = "SELECT Email FROM fahrgemeinschaft_user";
+                DataTable dt = db.RunQuery(sqlCmd);
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    if ((row["Email"].ToString() ?? "") == txtEMail.Text)
+                    {
+                        noErrors = false;
+                        lblEMailInfo.Text = "E-Mail Adresse wird bereits verwendet!";
+                    }
+                }
+
+
+                //Prüfen, ob Telefonnummer bereits existiert
+                sqlCmd = "SELECT TelNr FROM fahrgemeinschaft_user";
+                dt = db.RunQuery(sqlCmd);
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    if ((row["TelNr"].ToString() ?? "") == txtPhone.Text)
+                    {
+                        noErrors = false;
+                        lblPhoneInfo.Text = "Telefonnummer wird bereits verwendet!";
+                    }
+                }
+
 
                 if (noErrors)
                 {

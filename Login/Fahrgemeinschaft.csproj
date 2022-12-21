@@ -67,8 +67,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Themes\Registration\loginStyle.css" />
-    <Content Include="App_Themes\Registration\registrationStyle.css" />
     <Content Include="Login.aspx" />
     <Content Include="Registration.aspx" />
     <Content Include="Web.config" />
@@ -92,8 +90,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Themes\Registration\registrationSkin.skin" />
-    <Content Include="App_Themes\Registration\loginSkin.skin" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -102,6 +98,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
