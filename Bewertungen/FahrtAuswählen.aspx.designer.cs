@@ -168,12 +168,21 @@ namespace Bewertungen
         protected global::System.Web.UI.WebControls.TextBox txt_Sitzplätze;
 
         /// <summary>
-        /// gv_Fahrt_Anzeigen control.
+        /// txt_Ort control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gv_Fahrt_Anzeigen;
+        protected global::System.Web.UI.WebControls.TextBox txt_Ort;
+
+        /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
     }
 }

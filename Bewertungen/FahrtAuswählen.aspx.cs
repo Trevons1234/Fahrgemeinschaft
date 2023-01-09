@@ -20,6 +20,7 @@ namespace Bewertungen
             string endZeit = txt_EndZeit.Text;
             int raucherAuto = 1; //1 == Raucherauto
             List<CommandParameters> commands = new List<CommandParameters>();
+            string ort = txt_Ort.Text;
             if(cb_Bewertung.Checked)
             {
                 raucherAuto = 0;

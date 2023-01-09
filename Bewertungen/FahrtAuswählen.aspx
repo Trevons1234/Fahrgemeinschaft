@@ -150,12 +150,15 @@
                     <td class="auto-style32">
                         <asp:TextBox ID="txt_Sitzplätze" runat="server"></asp:TextBox>
                     </td>
-                    <td class="auto-style29"></td>
+                    <td class="auto-style29">
+                        <br />
+                    </td>
                     <td class="auto-style33"></td>
                 </tr>
             </table>
-            <asp:GridView ID="gv_Fahrt_Anzeigen" runat="server">
-            </asp:GridView>
+            <br />
+            <asp:TextBox ID="txt_Ort" runat="server" Width="191px"></asp:TextBox>
+            <asp:Label ID="Label1" runat="server" Text=" Wohnort"></asp:Label>
         </div>
     </form>
 </body>
