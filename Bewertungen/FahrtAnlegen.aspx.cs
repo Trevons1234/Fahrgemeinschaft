@@ -124,7 +124,7 @@ namespace Bewertungen
         protected void cv_Ankunftszeit_ServerValidate(object source, ServerValidateEventArgs args)
         {
             string input = txt_Ankunft.Text;
-            if (input.Contains(':'))
+            if(input.Contains(':'))
             {
                 args.IsValid = true;
             }

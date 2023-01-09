@@ -60,13 +60,13 @@ namespace Bewertungen
         protected global::System.Web.UI.WebControls.TextBox txt_EndZeit;
 
         /// <summary>
-        /// Raucher control.
+        /// cb_Raucher control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox Raucher;
+        protected global::System.Web.UI.WebControls.CheckBox cb_Raucher;
 
         /// <summary>
         /// lblRaucherAuto control.
@@ -78,13 +78,13 @@ namespace Bewertungen
         protected global::System.Web.UI.WebControls.Label lblRaucherAuto;
 
         /// <summary>
-        /// Preis control.
+        /// cb_Preis control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox Preis;
+        protected global::System.Web.UI.WebControls.CheckBox cb_Preis;
 
         /// <summary>
         /// lblPreis control.
@@ -123,13 +123,13 @@ namespace Bewertungen
         protected global::System.Web.UI.WebControls.Button btn_suchen;
 
         /// <summary>
-        /// Bewertung control.
+        /// cb_Bewertung control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox Bewertung;
+        protected global::System.Web.UI.WebControls.CheckBox cb_Bewertung;
 
         /// <summary>
         /// txtBewertung control.
@@ -150,13 +150,13 @@ namespace Bewertungen
         protected global::System.Web.UI.WebControls.RangeValidator RangeValidator1;
 
         /// <summary>
-        /// Sitzplätze control.
+        /// cb_Sitzplätze control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox Sitzplätze;
+        protected global::System.Web.UI.WebControls.CheckBox cb_Sitzplätze;
 
         /// <summary>
         /// txt_Sitzplätze control.
@@ -166,5 +166,14 @@ namespace Bewertungen
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_Sitzplätze;
+
+        /// <summary>
+        /// gv_Fahrt_Anzeigen control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gv_Fahrt_Anzeigen;
     }
 }

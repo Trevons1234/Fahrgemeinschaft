@@ -101,7 +101,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style24">
-                        <asp:CheckBox ID="Raucher" runat="server" />
+                        <asp:CheckBox ID="cb_Raucher" runat="server" />
                     </td>
                     <td class="auto-style21" id="lblRaucherauto" aria-expanded="true">
                         <asp:Label ID="lblRaucherAuto" runat="server" Text="kein Raucherauto"></asp:Label>
@@ -112,7 +112,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style25">
-                        <asp:CheckBox ID="Preis" runat="server" />
+                        <asp:CheckBox ID="cb_Preis" runat="server" />
                     </td>
                     <td class="auto-style22">
                         <asp:Label ID="lblPreis" runat="server" Text="MaxPreis"></asp:Label>
@@ -129,7 +129,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style25">
-                        <asp:CheckBox ID="Bewertung" runat="server" />
+                        <asp:CheckBox ID="cb_Bewertung" runat="server" />
                     </td>
                     <td class="auto-style22">
                         <span>∅ </span>Bewertung größer als</td>
@@ -143,7 +143,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style30">
-                        <asp:CheckBox ID="Sitzplätze" runat="server" />
+                        <asp:CheckBox ID="cb_Sitzplätze" runat="server" />
                     </td>
                     <td class="auto-style31">
                         Sitzplätze</td>
@@ -154,6 +154,8 @@
                     <td class="auto-style33"></td>
                 </tr>
             </table>
+            <asp:GridView ID="gv_Fahrt_Anzeigen" runat="server">
+            </asp:GridView>
         </div>
     </form>
 </body>

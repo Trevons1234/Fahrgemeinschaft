@@ -44,6 +44,42 @@ namespace DataBaseWrapper
 
             return dataTable;
         }
+        public DataTable RunQuery(string cmd, params CommandParameters[] commandParameters)
+        {
+            try
+            {
+                OdbcCommand command = new OdbcCommand(cmd, connection);
+                if (IsOpen)
+                {
+                    foreach (CommandParameters param in commandParameters)
+                    {
+                        command.Parameters.AddWithValue(param.Name, param.Value);
+                    }
+                    DataTable dt = new DataTable();
+                    OdbcDataAdapter da = new OdbcDataAdapter(command);
+                    da.Fill(dt);
+                    return dt;
+                }
+                else
+                {
+                    Open();
+                    foreach (CommandParameters param in commandParameters)
+                    {
+                        command.Parameters.AddWithValue(param.Name, param.Value);
+                    }
+                    DataTable dt = new DataTable();
+                    OdbcDataAdapter da = new OdbcDataAdapter(command);
+                    da.Fill(dt);
+                    Close();
+                    return dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                Close();
+                throw new ArgumentException("Something is wrong in the overloaded RunQuery-Method" + ex.Message);
+            }
+        }
 
         public object RunQueryScalar(string sqlCmd)
         {

@@ -102,6 +102,7 @@
       <DependentUpon>Bewertung.aspx</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
+    <Compile Include="CommandParameters.cs" />
     <Compile Include="DataBase.cs" />
     <Compile Include="FahrtAnlegen.aspx.cs">
       <DependentUpon>FahrtAnlegen.aspx</DependentUpon>
