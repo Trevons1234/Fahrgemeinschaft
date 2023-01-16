@@ -74,7 +74,7 @@ namespace Bewertungen
 
             if (eMailRowNum == pwRowNum && eMailRowNum != 0)
             {
-                Response.Redirect("MainpageAutoAnlegen.aspx");
+                Response.Redirect("Page.aspx");
             }
             else
             {
