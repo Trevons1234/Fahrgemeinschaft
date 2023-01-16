@@ -36,6 +36,10 @@ namespace Bewertungen
             {
                 lblEMailInfo.Text = "E-Mail kann nicht leer sein.";
             }
+            else
+            {
+                lblEMailInfo.Text = "";
+            }
 
             if (txtPassword.Text == "")
             {
@@ -43,36 +47,41 @@ namespace Bewertungen
             }
 
 
+
             sqlCmd = "SELECT * FROM fahrgemeinschaft_user";
 
             DataTable dt = db.RunQuery(sqlCmd);
             int eMailRowNum = 0;
-
+            bool emailFound = false;
             foreach (DataRow row in dt.Rows)
             {
-                eMailRowNum++;
                 if ((row["Email"].ToString() ?? "") == txtEMail.Text)
                 {
+                    eMailRowNum++;
+                    emailFound = true;
                     break;
                 }
+                eMailRowNum++;
             }
-            if (eMailRowNum == 0)
+            if (!emailFound)
             {
                 lblEMailInfo.Text = "Es existiert kein Account mit dieser EMail.";
             }
 
             int pwRowNum = 0;
-
+            bool passwordFound = false;
             foreach (DataRow row in dt.Rows)
             {
-                pwRowNum++;
                 if ((row["Passwort"].ToString() ?? "") == txtPassword.Text)
                 {
+                    pwRowNum++;
+                    passwordFound = true;
                     break;
                 }
+                pwRowNum++;
             }
 
-            if (eMailRowNum == pwRowNum && eMailRowNum != 0)
+            if (eMailRowNum == pwRowNum && eMailRowNum != 0 && emailFound && passwordFound)
             {
                 Response.Redirect("Page.aspx");
             }
