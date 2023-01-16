@@ -14,7 +14,11 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
+<<<<<<< HEAD:Bewertungen/Bewertungen.csproj.user
           <StartPageUrl>AutoHinzufügen.aspx</StartPageUrl>
+=======
+          <StartPageUrl>Page.aspx</StartPageUrl>
+>>>>>>> ab006b9734c1b9ae182617b82c8c04304af1d6fe:Bewertungen/Fahrgemeinschaft.csproj.user
           <StartAction>SpecificPage</StartAction>
           <AspNetDebugging>True</AspNetDebugging>
           <SilverlightDebugging>False</SilverlightDebugging>

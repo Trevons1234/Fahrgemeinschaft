@@ -5,46 +5,38 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <style type="text/css">
-        #form1 {
-            height: 236px;
-        }
-        .auto-style1 {
-            width: 124px;
-        }
-        .auto-style2 {
-            width: 417px;
-        }
-        .auto-style3 {
-            height: 116px;
-        }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"/>
 </head>
-<body style="height: 165px">
-    <form id="form1" runat="server" class="auto-style3">
-        <table style="width: 100%;">
-            <tr>
-                <td class="auto-style1">
-                    <asp:ImageButton ID="ibnFahrtAnlegen" runat="server" Height="92px" ImageAlign="Left" ImageUrl="~/Screenshot 2022-11-28 095545.png" OnClick="ibnFahrtAnlegen_Click" Width="105px" />
-                </td>
-                <td class="auto-style2">
-                    <asp:ImageButton ID="ibnFahrtBuchen" runat="server" Height="92px" ImageAlign="Left" ImageUrl="~/Screenshot 2022-11-28 095545.png" OnClick="ibnFahrtBuchen_Click" Width="105px" />
-                </td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style1">Fahrt anlegen</td>
-                <td class="auto-style2">Fahrt buchen</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style1">&nbsp;</td>
-                <td class="auto-style2">&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-        </table>
+<body>
+    <form id="form1" runat="server">
+        <div>
+        </div>
+
+        <div class="card text-white bg-dark w-50 h-15 mx-auto">
+            <div class="card-body text-center">
+                <h1>Wählen Sie eine Option aus:</h1>
+            </div>
+        </div>
+
+        <div class="card w-50 mx-auto">
+            <div class="card-body text-center">
+                <div class="form-group mb-1">
+
+                    <asp:ImageButton ID="ibnFahrtAnlegen" runat="server" type="submit" ImageUrl="~/Screenshot 2022-11-28 095545v1.png" OnClick="ibnFahrtAnlegen_Click" Width = "400px"></asp:ImageButton>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:ImageButton ID="ibnFahrtBuchen" runat="server" type="submit" ImageUrl="~/Screenshot 2022-11-28 095545v2.png" OnClick="ibnFahrtBuchen_Click" Width = "400px"></asp:ImageButton>
+
+                    <br />
+                    
+
+                </div>
+
+            </div>
+            <div class="card-body">   
+                <asp:Button ID="btnSignUp" runat="server" type="submit" class="btn btn-dark text-center" Text="Sign Up" OnClick="btnSignUp_Click" />
+                <asp:Button ID="btnLogIn" runat="server" type="submit" class="btn btn-dark text-center" Text="Log In" OnClick="btnLogIn_Click" />
+            </div>
+        </div>
     </form>
-    <p>
-        &nbsp;</p>
 </body>
 </html>

@@ -16,11 +16,21 @@ namespace Bewertungen
 
         protected void ibnFahrtAnlegen_Click(object sender, ImageClickEventArgs e)
         {
-            Response.Redirect("/AutoHinzufügen.aspx");
+            Response.Redirect("AutoHinzufügen.aspx");
         }
         protected void ibnFahrtBuchen_Click(object sender, ImageClickEventArgs e)
         {
             Response.Redirect("FahrtAuswählen.aspx");
+        }
+
+        protected void btnSignUp_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Registration.aspx");
+        }
+
+        protected void btnLogIn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
         }
     }
 }

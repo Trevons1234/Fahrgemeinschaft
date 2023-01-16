@@ -47,53 +47,57 @@ namespace Bewertungen
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
-            bool noErrors = false;
+
 
             // Vorname prüfen
+            bool firstnameValid;
             if (txtFirstname.Text.Length == 0)
             {
                 lblFirstnameInfo.Text = "Vorname ist ein Pflichtfeld!";
-                noErrors = false;
+                firstnameValid = false;
             }
             else
             {
                 lblFirstnameInfo.Text = "";
-                noErrors = true;
+                firstnameValid = true;
             }
 
 
             // Nachname prüfen
+            bool lastnameValid;
             if (txtLastname.Text.Length == 0)
             {
                 lblLastnameInfo.Text = "Nachname ist ein Pflichtfeld!";
-                noErrors = false;
+                lastnameValid = false;
             }
             else
             {
                 lblLastnameInfo.Text = "";
-                noErrors = true;
+                lastnameValid = true;
             }
 
 
             // E-Mail prüfen 
+            bool emailValid;
             if (txtEMail.Text.Length == 0)
             {
                 lblEMailInfo.Text = "E-Mail Adresse ist ein Pflichtfeld!";
-                noErrors = false;
+                emailValid = false;
             }
             else if (!txtEMail.Text.Contains("@"))
             {
                 lblEMailInfo.Text = "Ungültige E-Mail Adresse";
-                noErrors = false;
+                emailValid = false;
             }
             else
             {
                 lblEMailInfo.Text = "";
-                noErrors = true;
+                emailValid = true;
             }
 
 
             // Passwort prüfen 
+            bool passwordValid = false;
             bool containsDigit = false;
             foreach (char c in txtPassword.Text)
             {
@@ -101,63 +105,66 @@ namespace Bewertungen
                 {
                     lblPasswordInfo.Text = "";
                     containsDigit = true;
+                    passwordValid = true;
                 }
 
                 if (!containsDigit)
                 {
                     lblPasswordInfo.Text = "Passwort muss mindestens eine Ziffer enthalten!";
-                    noErrors = false;
+                    passwordValid = false;
                 }
             }
 
             if (txtPassword.Text.Length == 0)
             {
                 lblPasswordInfo.Text = "Passwort ist ein Pflichtfeld!";
-                noErrors = false;
+                passwordValid = false;
             }
             else if (txtPassword.Text.Length < 8)
             {
                 lblPasswordInfo.Text = "Passwort muss mindestens acht Zeichen lang sein!";
-                noErrors = false;
+                passwordValid = false;
             }
-            else
+            else if (containsDigit)
             {
                 lblPasswordInfo.Text = "";
-                noErrors = true;
+                passwordValid = true;
             }
 
 
             // Telefonnummer prüfen 
+            bool phoneValid;
             if (txtPhone.Text.Length == 0)
             {
                 lblPhoneInfo.Text = "Tel-Nummer ist ein Pflichtfeld!";
-                noErrors = false;
+                phoneValid = false;
             }
             else
             {
                 if (txtPhone.Text[0] != '+')
                 {
                     lblPhoneInfo.Text = "Tel-Nummer muss mit '+' anfangen!";
-                    noErrors = false;
+                    phoneValid = false;
                 }
                 else
                 {
                     lblPhoneInfo.Text = "";
-                    noErrors = true;
+                    phoneValid = true;
                 }
             }
-            
+
 
             // Geburtsdatum prüfen 
+            bool birthdayValid;
             if (txtBirthday.Text.Length == 0)
             {
                 lblBirthdayInfo.Text = "Geburtsdatum ist ein Pflichtfeld!";
-                noErrors = false;
+                birthdayValid = false;
             }
             else
             {
                 lblBirthdayInfo.Text = "";
-                noErrors = true;
+                birthdayValid = true;
             }
 
             
@@ -177,8 +184,8 @@ namespace Bewertungen
                 {
                     if ((row["Email"].ToString() ?? "") == txtEMail.Text)
                     {
-                        noErrors = false;
                         lblEMailInfo.Text = "E-Mail Adresse wird bereits verwendet!";
+                        emailValid = false;
                     }
                 }
 
@@ -191,13 +198,16 @@ namespace Bewertungen
                 {
                     if ((row["TelNr"].ToString() ?? "") == txtPhone.Text)
                     {
-                        noErrors = false;
                         lblPhoneInfo.Text = "Telefonnummer wird bereits verwendet!";
+                        phoneValid = false;
                     }
                 }
 
 
-                if (noErrors)
+
+
+
+                if (firstnameValid && lastnameValid && emailValid && passwordValid && phoneValid && birthdayValid)
                 {
                     int userId;
 
@@ -217,13 +227,20 @@ namespace Bewertungen
                         $"'{txtFirstname.Text}.{txtLastname.Text}#{userId}','{txtPassword.Text}','{txtEMail.Text}')";
 
                     db.RunNonQuery(sqlCmd);
-                    Response.Redirect("MainpageAutoAnlegen.aspx");
+                    Response.Redirect("Page.aspx");
                 }
             }
+<<<<<<< HEAD
             /*catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }*/
+=======
+            //catch (Exception ex)
+            //{
+            //    throw new Exception(ex.Message);
+            //}
+>>>>>>> ab006b9734c1b9ae182617b82c8c04304af1d6fe
             finally
             {
                 conn.Close();
