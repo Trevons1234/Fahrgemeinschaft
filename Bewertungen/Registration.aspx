@@ -41,7 +41,7 @@
                 </div>
                 <div class="form-group mb-1">
                     <label for="txtPassword">Passwort</label>
-                    <asp:TextBox ID="txtPassword" runat="server" type="password" class="form-control" aria-describedby="passwordHelp" placeholder="Passwort"></asp:TextBox>
+                    <asp:TextBox ID="txtPassword" runat="server" type="password" class="form-control" aria-describedby="passwordHelp" placeholder="Passwort" TextMode="Password"></asp:TextBox>
                     <small id="passwordHelp" class="form-text text-muted">
                         <asp:Label runat="server" ID="lblPasswordInfo"></asp:Label>
                     </small>

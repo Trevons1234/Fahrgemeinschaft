@@ -22,5 +22,15 @@ namespace Bewertungen
         {
             Response.Redirect("FahrtAuswählen.aspx");
         }
+
+        protected void btnSignUp_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Registration.aspx");
+        }
+
+        protected void btnLogIn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
+        }
     }
 }

@@ -26,8 +26,15 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:ImageButton ID="ibnFahrtBuchen" runat="server" type="submit" ImageUrl="~/Screenshot 2022-11-28 095545v2.png" OnClick="ibnFahrtBuchen_Click" Width = "400px"></asp:ImageButton>
 
+                    <br />
+                    
+
                 </div>
 
+            </div>
+            <div class="card-body">   
+                <asp:Button ID="btnSignUp" runat="server" type="submit" class="btn btn-dark text-center" Text="Sign Up" OnClick="btnSignUp_Click" />
+                <asp:Button ID="btnLogIn" runat="server" type="submit" class="btn btn-dark text-center" Text="Log In" OnClick="btnLogIn_Click" />
             </div>
         </div>
     </form>
