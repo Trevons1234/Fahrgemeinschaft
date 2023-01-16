@@ -24,22 +24,31 @@ namespace Bewertungen
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// btnNeuesAutoHinzufügen control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnNeuesAutoHinzufügen;
+        protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// ddlHinzugefügteAutos control.
+        /// txtEMail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlHinzugefügteAutos;
+        protected global::System.Web.UI.WebControls.TextBox txtEMail;
+
+        /// <summary>
+        /// txtPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPassword;
 
         /// <summary>
         /// btn_FahrtAnlegen control.
@@ -49,5 +58,14 @@ namespace Bewertungen
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_FahrtAnlegen;
+
+        /// <summary>
+        /// ddlHinzugefügteAutos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlHinzugefügteAutos;
     }
 }

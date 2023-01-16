@@ -6,35 +6,35 @@
 <head runat="server">
     <title></title>
     <style type="text/css">
-        .auto-style1 {
-            width: 225px;
-        }
         .auto-style2 {
             width: 29%;
             height: 120px;
         }
-    </style>
+        .auto-style3 {
+            width: 368px;
+        }
+        .auto-style4 {
+            width: 395px;
+        }
+        </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
             <table class="auto-style2">
-                <tr>
-                    <td class="auto-style1">Neues Auto hinzufügen&nbsp;&nbsp; </td>
-                    <td>vorhandenes Auto verwenden</td>
-                </tr>
-                <tr>
-                    <td class="auto-style1">
-                        <asp:Button ID="btnNeuesAutoHinzufügen" runat="server" Text="Button" Width="184px" Height="29px" OnClick="btnNeuesAutoHinzufügen_Click" />
-                    </td>
-                    <td>
-                        <asp:DropDownList ID="ddlHinzugefügteAutos" runat="server" Height="29px" Width="177px">
-                        </asp:DropDownList>
-                    </td>
-                </tr>
                 </table>
-&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="btn_FahrtAnlegen" runat="server" OnClick="btn_FahrtAnlegen_Click" style="margin-left: 0px" Text="Fahrt Anlegen" Width="342px" />
-            &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div style="margin-left: 35%" class="auto-style4">
+            <h1><asp:Label ID="Label1" runat="server" Text="Was möchten Sie tun?"></asp:Label></h1>
+            <asp:TextBox ID="txtEMail" runat="server" Text="Neues Auto hinzufügen" Width="143px">Neues Auto hinzufügen</asp:TextBox>
+            
+            &nbsp;<asp:TextBox ID="txtPassword" runat="server" style="margin-left: 10px;" Text="vorhandenes Auto verwenden" Width="167px"></asp:TextBox>
+            
+            <br />
+            <asp:Button ID="btn_FahrtAnlegen" runat="server" style="margin-left: 2px; margin: 2px" Text="neues Auto hinzufügen" Height="30px" Width="143px" OnClick="btnNeuesAutoHinzufügen_Click" />
+                        <asp:DropDownList ID="ddlHinzugefügteAutos" runat="server" Height="30px" Width="177px" style="margin-left: 15px">
+                        </asp:DropDownList>
+        </div>
         </div>
     </form>
 </body>

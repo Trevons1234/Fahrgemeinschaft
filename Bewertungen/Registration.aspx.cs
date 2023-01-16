@@ -220,10 +220,10 @@ namespace Bewertungen
                     Response.Redirect("MainpageAutoAnlegen.aspx");
                 }
             }
-            catch (Exception ex)
+            /*catch (Exception ex)
             {
                 throw new Exception(ex.Message);
-            }
+            }*/
             finally
             {
                 conn.Close();
