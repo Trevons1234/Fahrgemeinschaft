@@ -105,7 +105,9 @@ namespace Bewertungen
                 id = Convert.ToInt32(cmd.ExecuteScalar());
             }
             catch(Exception ex)
-            { }
+            { 
+                throw new ApplicationException(ex.Message);
+            }
             return id;
         }
 

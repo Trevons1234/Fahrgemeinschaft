@@ -230,17 +230,6 @@ namespace Bewertungen
                     Response.Redirect("Page.aspx");
                 }
             }
-<<<<<<< HEAD
-            /*catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }*/
-=======
-            //catch (Exception ex)
-            //{
-            //    throw new Exception(ex.Message);
-            //}
->>>>>>> ab006b9734c1b9ae182617b82c8c04304af1d6fe
             finally
             {
                 conn.Close();
