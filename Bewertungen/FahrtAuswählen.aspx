@@ -53,7 +53,6 @@
             <br />
             <asp:GridView ID="gv_Data" runat="server">
             </asp:GridView>
-        </div>
 
     </form>
 </body>

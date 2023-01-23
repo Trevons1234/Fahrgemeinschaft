@@ -23,8 +23,9 @@ namespace Bewertungen
             string startZeit = txt_StartZeit.Text;
             string endZeit = txt_EndZeit.Text;
             int raucherAuto = 0; //1 == Raucherauto
-            string ort = txt_Ort.Text;
+            string ort;
             List<CommandParameters> commands = new List<CommandParameters>();
+            if (!cb_Raucher.Checked)
             if(cb_Bewertung.Checked && Convert.ToInt32(txtBewertung.Text) >= 1 && Convert.ToInt32(txtBewertung.Text) <= 5)
             {
                 int bewertung = Convert.ToInt32(txtBewertung.Text);
