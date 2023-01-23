@@ -18,12 +18,11 @@
             <div class="card w-50 mx-auto">
                 <div class="card-body text-center">
                     <div class="form-group mb-1">
-                    <bd>Neues Auto hinzufügen</bd>
-                    <bd>vorhandenes Auto verwenden</bd>
 
                     <bd>
-                        <asp:Button ID="btnNeuesAutoHinzufügen" runat="server" type="submit" class="btn btn-dark text-center" Text="Neues Auto" Width="184px" Height="29px" OnClick="btnNeuesAutoHinzufügen_Click" />
+                        <asp:Button ID="btnNeuesAutoHinzufügen" runat="server" type="submit" class="btn btn-dark text-center" Text="Neues Auto anlegen" Width="184px" Height="29px" OnClick="btnNeuesAutoHinzufügen_Click" />
                     </bd>
+                    <bd> oder vorhandenes Auto auswählen:</bd>
                     <bd>
                         <asp:DropDownList ID="ddlHinzugefügteAutos" runat="server" Height="29px" Width="177px">
                         </asp:DropDownList>
