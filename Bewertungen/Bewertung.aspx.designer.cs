@@ -24,15 +24,6 @@ namespace Bewertungen
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// rblPüntl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label rblPüntl;
-
-        /// <summary>
         /// rblPünktlichkeit control.
         /// </summary>
         /// <remarks>
@@ -40,15 +31,6 @@ namespace Bewertungen
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList rblPünktlichkeit;
-
-        /// <summary>
-        /// cbxFahrstil control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label cbxFahrstil;
 
         /// <summary>
         /// rblFahrstil control.

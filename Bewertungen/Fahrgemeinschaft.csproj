@@ -82,7 +82,6 @@
     <Content Include="MainpageAutoAnlegen.aspx" />
     <Content Include="Page.aspx" />
     <Content Include="Registration.aspx" />
-    <Content Include="Screenshot 2022-11-28 095255.png" />
     <Content Include="Screenshot 2022-11-28 095545.png" />
     <Content Include="Web.config" />
   </ItemGroup>
