@@ -73,6 +73,7 @@ namespace Bewertungen
                 OdbcCommand cmd = new OdbcCommand(sqlInsCmd, conn);
                 cmd.ExecuteNonQuery();
                 lbl_info.Text = "Fahrt wurde angelegt!";
+                Response.Redirect("Page.aspx");
             }
             catch (Exception ex) 
             {
@@ -115,7 +116,6 @@ namespace Bewertungen
 
         protected void cv_Startzeit_ServerValidate(object source, ServerValidateEventArgs args)
         {
-
             string input = txt_Startzeit.Text;
             if(input.Contains(':'))
             {

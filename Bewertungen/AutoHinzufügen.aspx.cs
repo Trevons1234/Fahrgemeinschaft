@@ -21,9 +21,8 @@ namespace Bewertungen
                 ViewState["userId"] = userId;
                 string connStrg = WebConfigurationManager.ConnectionStrings["AppDbInt"].ConnectionString;
                 db = new DataBase(connStrg);
-                string sqlCmd = "SELECT AutoId, CONCAT(Marke,' (',Kennzeichen,')') AS newBez FROM fahrgemeinschaft_auto";
+                string sqlCmd = $"SELECT AutoId, CONCAT(Marke,' (',Kennzeichen,')') AS newBez FROM fahrgemeinschaft_auto where UserId like '{userId}'";
                 DataTable dt = db.RunQuery(sqlCmd);
-
                 foreach (DataRow dr in dt.Rows)
                 {
                     ddlHinzugefügteAutos.Items.Add(dr[1].ToString());
@@ -41,7 +40,7 @@ namespace Bewertungen
         {
             int userId = Convert.ToInt32(Request.QueryString["userId"]);
             string auto = ddlHinzugefügteAutos.SelectedValue;
-            Response.Redirect("FahrtAnlegen.aspx?auto?userId="+ auto +userId);
+            Response.Redirect("FahrtAnlegen.aspx?auto=" + auto + "&userId=" + userId);
         }
     }
 }

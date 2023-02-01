@@ -33,7 +33,6 @@ namespace Bewertungen
                     {
                         ddlAutomarke.Items.Add(dr[0].ToString());
                     }
-
                 }
                 catch (Exception ex) { lblInfo.Text += ex.Message; }
             }
@@ -52,7 +51,7 @@ namespace Bewertungen
             }
             catch (Exception ex) { lblInfo.Text += ex.Message; }
             string auto = ddlAutomarke.SelectedItem.Text + " "+ "("+txtKennzeichen.Text+")";
-            Response.Redirect("FahrtAnlegen.aspx?auto="+auto);
+            Response.Redirect("FahrtAnlegen.aspx?auto="+auto+"&userId="+userId);
         }
     }
 }
