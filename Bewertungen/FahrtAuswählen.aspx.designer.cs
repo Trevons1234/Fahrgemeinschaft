@@ -69,15 +69,6 @@ namespace Bewertungen
         protected global::System.Web.UI.WebControls.CheckBox cb_Raucher;
 
         /// <summary>
-        /// lblRaucherAuto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblRaucherAuto;
-
-        /// <summary>
         /// cb_Preis control.
         /// </summary>
         /// <remarks>
@@ -85,15 +76,6 @@ namespace Bewertungen
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox cb_Preis;
-
-        /// <summary>
-        /// lblPreis control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPreis;
 
         /// <summary>
         /// txtMaxPreis control.
@@ -112,15 +94,6 @@ namespace Bewertungen
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RangeValidator RangeValidator2;
-
-        /// <summary>
-        /// btn_suchen control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_suchen;
 
         /// <summary>
         /// cb_Bewertung control.
@@ -177,12 +150,12 @@ namespace Bewertungen
         protected global::System.Web.UI.WebControls.TextBox txt_Ort;
 
         /// <summary>
-        /// Label1 control.
+        /// btn_suchen control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Button btn_suchen;
     }
 }

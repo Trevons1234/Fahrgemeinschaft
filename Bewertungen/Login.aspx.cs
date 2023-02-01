@@ -48,46 +48,40 @@ namespace Bewertungen
 
 
 
-            sqlCmd = "SELECT * FROM fahrgemeinschaft_user";
+            sqlCmd = $"SELECT * FROM fahrgemeinschaft_user WHERE Email = '{txtEMail.Text}'";
 
             DataTable dt = db.RunQuery(sqlCmd);
-            int eMailRowNum = 0;
             bool emailFound = false;
             foreach (DataRow row in dt.Rows)
             {
                 if ((row["Email"].ToString() ?? "") == txtEMail.Text)
                 {
-                    eMailRowNum++;
                     emailFound = true;
                     break;
                 }
-                eMailRowNum++;
             }
             if (!emailFound)
             {
                 lblEMailInfo.Text = "Es existiert kein Account mit dieser EMail.";
             }
 
-            int pwRowNum = 0;
             bool passwordFound = false;
             foreach (DataRow row in dt.Rows)
             {
                 if ((row["Passwort"].ToString() ?? "") == txtPassword.Text)
                 {
-                    pwRowNum++;
                     passwordFound = true;
                     break;
                 }
-                pwRowNum++;
             }
 
-            if (eMailRowNum == pwRowNum && eMailRowNum != 0 && emailFound && passwordFound)
+            if (emailFound && passwordFound)
             {
                 Response.Redirect("Page.aspx");
             }
             else
             {
-                lblPasswordInfo.Text = "Falsches Passwort";
+                lblPasswordInfo.Text = "EMail oder Passwort falsch!";
             }
 
         }
