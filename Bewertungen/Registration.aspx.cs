@@ -227,7 +227,7 @@ namespace Bewertungen
                         $"'{txtFirstname.Text}.{txtLastname.Text}#{userId}','{txtPassword.Text}','{txtEMail.Text}')";
 
                     db.RunNonQuery(sqlCmd);
-                    Response.Redirect("Page.aspx");
+                    Response.Redirect("Page.aspx?userId="+userId);
                 }
             }
             finally

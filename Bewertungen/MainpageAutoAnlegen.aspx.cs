@@ -21,6 +21,8 @@ namespace Bewertungen
         {
             if (!Page.IsPostBack)
             {
+                int userId = Convert.ToInt32(Request.QueryString["userId"]);
+                ViewState["userId"] = userId;
                 string sqlCmd = "SELECT Marke FROM fahrgemeinschaft_marken ";
                 try
                 {
@@ -40,10 +42,11 @@ namespace Bewertungen
         protected void btnFahrtAnlegen_Click(object sender, EventArgs e)
         {
             OdbcConnection conn = new OdbcConnection(connStrg);
+            int userId = Convert.ToInt32(ViewState["userId"]);
             try
             {
                 conn.Open();
-                string sqlInsCmd = $"INSERT INTO fahrgemeinschaft_auto (Marke,Kennzeichen,Sitzplätze,Raucherauto) VALUES('{ddlAutomarke.SelectedItem.Text}','{txtKennzeichen.Text}',{txtAnzSitzpläze.Text},{rblRaucherauto.SelectedValue})";
+                string sqlInsCmd = $"INSERT INTO fahrgemeinschaft_auto (Marke,Kennzeichen,Sitzplätze,Raucherauto, UserId) VALUES('{ddlAutomarke.SelectedItem.Text}','{txtKennzeichen.Text}',{txtAnzSitzpläze.Text},{rblRaucherauto.SelectedValue}, {userId})";
                 OdbcCommand cmd = new OdbcCommand(sqlInsCmd, conn);
                 cmd.ExecuteNonQuery();
             }

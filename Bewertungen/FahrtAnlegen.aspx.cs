@@ -17,6 +17,8 @@ namespace Bewertungen
         {
             string auto = Request.QueryString["auto"].ToString();
             ViewState["Auto"] = auto;
+            int userId = Convert.ToInt32(Request.QueryString["userId"]);
+            ViewState["userId"] = userId;
             lbl_info.Text = "";
             if (Page.IsPostBack)
             {
@@ -57,7 +59,7 @@ namespace Bewertungen
         protected void btn_FahrtAnlegen_Click(object sender, EventArgs e)
         {
             int carid = GetCarId();
-            int userId = 31;
+            int userId = Convert.ToInt32(ViewState["userId"]);
             string preis = txt_Preis.Text;
             if(string.IsNullOrEmpty(preis))
             {

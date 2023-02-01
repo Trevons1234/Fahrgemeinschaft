@@ -11,16 +11,19 @@ namespace Bewertungen
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            int userId = Convert.ToInt32(Request.QueryString["userId"]);
+            ViewState["userId"] = userId;
         }
 
         protected void ibnFahrtAnlegen_Click(object sender, ImageClickEventArgs e)
         {
-            Response.Redirect("AutoHinzufügen.aspx");
+            int userId = Convert.ToInt32(ViewState["userId"]);
+            Response.Redirect("AutoHinzufügen.aspx?userId="+userId);
         }
         protected void ibnFahrtBuchen_Click(object sender, ImageClickEventArgs e)
         {
-            Response.Redirect("FahrtAuswählen.aspx");
+            int userId = Convert.ToInt32(ViewState["userId"]);
+            Response.Redirect("FahrtAuswählen.aspx?userId="+userId);
         }
 
         protected void btnSignUp_Click(object sender, EventArgs e)

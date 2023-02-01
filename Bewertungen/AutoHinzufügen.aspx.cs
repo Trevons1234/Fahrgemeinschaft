@@ -17,6 +17,8 @@ namespace Bewertungen
         {
             if (!Page.IsPostBack)
             {
+                int userId = Convert.ToInt32(Request.QueryString["userId"]);
+                ViewState["userId"] = userId;
                 string connStrg = WebConfigurationManager.ConnectionStrings["AppDbInt"].ConnectionString;
                 db = new DataBase(connStrg);
                 string sqlCmd = "SELECT AutoId, CONCAT(Marke,' (',Kennzeichen,')') AS newBez FROM fahrgemeinschaft_auto";
@@ -31,13 +33,15 @@ namespace Bewertungen
 
         protected void btnNeuesAutoHinzufügen_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/MainpageAutoAnlegen.aspx");
+            int userId = Convert.ToInt32(Request.QueryString["userId"]);
+            Response.Redirect("/MainpageAutoAnlegen.aspx?userId="+userId);
         }
 
         protected void btn_FahrtAnlegen_Click(object sender, EventArgs e)
         {
+            int userId = Convert.ToInt32(Request.QueryString["userId"]);
             string auto = ddlHinzugefügteAutos.SelectedValue;
-            Response.Redirect("FahrtAnlegen.aspx?auto="+ auto);
+            Response.Redirect("FahrtAnlegen.aspx?auto?userId="+ auto +userId);
         }
     }
 }
