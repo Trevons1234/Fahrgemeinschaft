@@ -132,6 +132,24 @@ namespace Bewertungen
         protected global::System.Web.UI.WebControls.Label lblBirthdayInfo;
 
         /// <summary>
+        /// cb_AGB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_AGB;
+
+        /// <summary>
+        /// lbl_cb_AGB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_cb_AGB;
+
+        /// <summary>
         /// btnRegister control.
         /// </summary>
         /// <remarks>

@@ -1,0 +1,8 @@
+.vs/
+bin/
+obj/
+<<<<<<< HEAD
+*csproj.user
+=======
+*.csproj.user
+>>>>>>> 6b19b2f (Ignore .csproj.user)

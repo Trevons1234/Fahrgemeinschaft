@@ -52,11 +52,13 @@ namespace Bewertungen
 
             DataTable dt = db.RunQuery(sqlCmd);
             bool emailFound = false;
+            string email = "";
             foreach (DataRow row in dt.Rows)
             {
                 if ((row["Email"].ToString() ?? "") == txtEMail.Text)
                 {
                     emailFound = true;
+                    email = txtEMail.Text;
                     break;
                 }
             }
@@ -74,10 +76,12 @@ namespace Bewertungen
                     break;
                 }
             }
-
+            string command;
             if (emailFound && passwordFound)
             {
-                Response.Redirect("Page.aspx");
+                command = $"SELECT UserId FROM fahrgemeinschaft_user WHERE Email LIKE '{email}'";
+                int userId = Convert.ToInt32(db.RunQueryScalar(command));
+                Response.Redirect("Page.aspx?userId=" + userId);
             }
             else
             {

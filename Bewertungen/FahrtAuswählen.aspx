@@ -34,22 +34,30 @@
             <asp:TextBox ID="txtMaxPreis" runat="server" TextMode="Number"></asp:TextBox>
 
             <asp:RangeValidator ID="RangeValidator2" runat="server" ControlToValidate="txtBewertung" EnableClientScript="False" ErrorMessage="Der Preis muss positiv sein" MaximumValue="5" MinimumValue="1"></asp:RangeValidator>
-            <label for="cb_Bewertung">∅ Bewertung größer als</label>
+            <br />
+            <label for="cb_Bewertung">&nbsp;Bewertung größer als</label>
             <div>
                 <asp:CheckBox ID="cb_Bewertung" runat="server" /></div>
             <asp:TextBox ID="txtBewertung" runat="server"></asp:TextBox>
             <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="txtBewertung" EnableClientScript="False" ErrorMessage="Deine Bewertung muss zwischen 1 und 5 liegen" MaximumValue="5" MinimumValue="1"></asp:RangeValidator>
+
+            <br />
 
             <label for="cb_Sitzplätze">Sitzplätze</label>
             <div>
                 <asp:CheckBox ID="cb_Sitzplätze" runat="server" /></div>
             <asp:TextBox ID="txt_Sitzplätze" runat="server"></asp:TextBox>
 
+            <br />
+
             <label for="txt_Ort">Wohnort</label>
+            <br />
             <asp:TextBox ID="txt_Ort" runat="server"></asp:TextBox>
 
-            <asp:Button ID="btn_suchen" runat="server" type="submit" class="btn btn-dark text-center" OnClick="btn_suchen_Click" Text="Suchen" Width="155px" />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txt_Ort" EnableClientScript="False" ErrorMessage="Bitte Wohnort eingeben"></asp:RequiredFieldValidator>
             <br />
+
+            <asp:Button ID="btn_suchen" runat="server" type="submit" class="btn btn-dark text-center" OnClick="btn_suchen_Click" Text="Suchen" Width="155px" />
             <br />
             <asp:GridView ID="gv_Data" runat="server">
             </asp:GridView>

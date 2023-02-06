@@ -41,6 +41,9 @@ namespace Bewertungen
 
                 lblBirthdayInfo.ForeColor = System.Drawing.Color.Red;
                 lblBirthdayInfo.Text = "";
+
+                lbl_cb_AGB.ForeColor = System.Drawing.Color.Red;
+                lbl_cb_AGB.Text = "";
             }
         }
 
@@ -206,28 +209,31 @@ namespace Bewertungen
 
 
 
-
-                if (firstnameValid && lastnameValid && emailValid && passwordValid && phoneValid && birthdayValid)
+                //CheckBox einfügen die bestätigt, dass User mit weitergaben von Daten einverstanden ist
+                if (cb_AGB.Checked)
                 {
-                    int userId;
-
-                    sqlCmd = $"SELECT MAX(UserId) FROM fahrgemeinschaft_user";
-                    object val = db.RunQueryScalar(sqlCmd);
-
-                    if (val == DBNull.Value)
+                    if (firstnameValid && lastnameValid && emailValid && passwordValid && phoneValid && birthdayValid)
                     {
-                        userId = 1;
+                        int userId;
+                        sqlCmd = $"SELECT MAX(UserId) FROM fahrgemeinschaft_user";
+                        object val = db.RunQueryScalar(sqlCmd);
+                        if (val == DBNull.Value)
+                        {
+                            userId = 1;
+                        }
+                        else
+                        {
+                            userId = Convert.ToInt32(val) + 1;
+                        }
+                        sqlCmd = $"INSERT INTO fahrgemeinschaft_user VALUES('{userId}','{txtFirstname.Text}','{txtLastname.Text}','{txtPhone.Text}','{txtBirthday.Text}',0,0," +
+                            $"'{txtFirstname.Text}.{txtLastname.Text}#{userId}','{txtPassword.Text}','{txtEMail.Text}')";
+                        db.RunNonQuery(sqlCmd);
+                        Response.Redirect("Page.aspx?userId=" + userId);
                     }
-                    else
-                    {
-                        userId = Convert.ToInt32(val) + 1;
-                    }
-
-                    sqlCmd = $"INSERT INTO fahrgemeinschaft_user VALUES('{userId}','{txtFirstname.Text}','{txtLastname.Text}','{txtPhone.Text}','{txtBirthday.Text}',0,0," +
-                        $"'{txtFirstname.Text}.{txtLastname.Text}#{userId}','{txtPassword.Text}','{txtEMail.Text}')";
-
-                    db.RunNonQuery(sqlCmd);
-                    Response.Redirect("Page.aspx?userId="+userId);
+                }
+                else 
+                {
+                    lbl_cb_AGB.Text = "Bitte zustimmen!";
                 }
             }
             finally

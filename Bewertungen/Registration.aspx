@@ -61,6 +61,11 @@
                     </small>
                 </div>
 
+                Ich Stimme zu, dass meine Daten an andere weitergegeben werden<br />
+                <asp:CheckBox ID="cb_AGB" runat="server" />
+                <asp:Label ID="lbl_cb_AGB" runat="server"></asp:Label>
+                <br />
+
                 <asp:Button ID="btnRegister" runat="server" type="submit" class="btn btn-dark text-center" OnClick="btnRegister_Click" Text="Registrieren"></asp:Button>
             </div>
         </div>

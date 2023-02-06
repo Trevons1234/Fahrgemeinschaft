@@ -42,6 +42,10 @@ namespace Bewertungen
         {
             OdbcConnection conn = new OdbcConnection(connStrg);
             int userId = Convert.ToInt32(ViewState["userId"]);
+            if (ddlAutomarke.SelectedItem.Text == "") throw new Exception();
+            if(txtKennzeichen.Text == "") throw new Exception();
+            if(txtAnzSitzpläze.Text == "") throw new Exception();
+            if(userId <= 0) throw new Exception();
             try
             {
                 conn.Open();
