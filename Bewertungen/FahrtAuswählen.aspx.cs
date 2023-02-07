@@ -17,7 +17,7 @@ namespace Bewertungen
         string connStrg = WebConfigurationManager.ConnectionStrings["AppDbInt"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            btn_Bewerten.Visible= false;
         }
 
         protected void btn_suchen_Click(object sender, EventArgs e)
@@ -87,17 +87,25 @@ namespace Bewertungen
                 try
                 {
                     userId = Convert.ToInt32(db.RunQueryScalar(command));
-                    command = $"SELECT Vorname, Nachname, TelNr from fahrgemeinschaft_user WHERE UserId LIKE '{userId}'";
+                    ViewState["UserId"] = userId;
+                    command = $"SELECT Vorname, Nachname, TelNr from fahrgemeinschaft_user WHERE UserId LIKE {userId}";
                     dt = db.RunQuery(command2);
                 }
                 catch (Exception)
                 {
-
                     throw;
                 }
+                btn_Bewerten.Visible = true;
+                gv_FahrerDaten.DataSource = dt;
+                gv_FahrerDaten.DataBind();
 
 
             }
+        }
+        protected void btn_Bewerten_Click(object sender, EventArgs e)
+        {
+            int userId = Convert.ToInt32(ViewState["UserId"]);
+            Response.Redirect("Bewertung.aspx?userId="+userId);
         }
     }
 }

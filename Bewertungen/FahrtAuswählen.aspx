@@ -7,7 +7,7 @@
     <title></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
 </head>
-<body style="height: 316px">
+<body style="height: 736px">
     <form id="form1" runat="server">
 
         <div class="card text-white bg-dark w-50 h-15 mx-auto">
@@ -64,6 +64,11 @@
                     <asp:ButtonField ButtonType="Button" Text="Buchen" CommandName="btn_Buchen_Click" />
                 </Columns>
             </asp:GridView>
+            <br />
+            <br />
+            <asp:GridView ID="gv_FahrerDaten" runat="server">
+            </asp:GridView>
+            <asp:Button ID="btn_Bewerten" runat="server" Text="Fahrer bewerten" OnClick="btn_Bewerten_Click" />
          
 
     </form>

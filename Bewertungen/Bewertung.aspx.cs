@@ -14,7 +14,7 @@ namespace Bewertungen
 
     public partial class Bewertung : System.Web.UI.Page
     {
-        static string connStrg = WebConfigurationManager.ConnectionStrings["AppDbExt"].ConnectionString;
+        static string connStrg = WebConfigurationManager.ConnectionStrings["AppDbInt"].ConnectionString;
         public int reviewCount = 0;
         DataBase db = new DataBase(connStrg);
 
@@ -37,7 +37,7 @@ namespace Bewertungen
                 sumRating += item;
             }
             double erg = sumRating / Rating.Count;
-            lblErg.Text = erg.ToString();
+            //lblErg.Text = erg.ToString();
             return erg;
         }
 
@@ -45,19 +45,21 @@ namespace Bewertungen
         {
 
             double rating = AverageRating();
+            int userId = Convert.ToInt32(Request.QueryString["userId"]);
+            ViewState["userId"] = userId;
             DataTable dt = new DataTable();
             try
             {
                 OdbcConnection conn = new OdbcConnection(connStrg);
                 conn.Open();
-                string sqlCmdGetAvgAndSumBewertungen = $"SELECT SumBewertungen, AvgBewertungen from fahrgemeinschaft_user WHERE UserId = 200";
+                string sqlCmdGetAvgAndSumBewertungen = $"SELECT SumBewertungen, AvgBewertungen from fahrgemeinschaft_user WHERE UserId = {userId}";
                 dt = db.RunQuery(sqlCmdGetAvgAndSumBewertungen);
                 double sumBewertung = Convert.ToDouble(dt.Rows[0][0]);
                 double avgBewertung = Convert.ToDouble(dt.Rows[0][1]);
                 sumBewertung++;
                 double newAvgBewertung = (sumBewertung * avgBewertung + rating) / sumBewertung;
                 double avgBewertung1 = Math.Round(newAvgBewertung, 2);
-                string updateBewertung = $"UPDATE fahrgemeinschaft_user SET SumBewertungen = {sumBewertung}, AvgBewertungen = '{avgBewertung1}' WHERE UserId = 200";
+                string updateBewertung = $"UPDATE fahrgemeinschaft_user SET SumBewertungen = {sumBewertung}, AvgBewertungen = '{avgBewertung1}' WHERE UserId = {userId}";
                 db.RunQuery(updateBewertung);
                 conn.Close();
             }
