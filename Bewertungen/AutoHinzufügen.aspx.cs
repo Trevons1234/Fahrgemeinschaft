@@ -19,7 +19,6 @@ namespace Bewertungen
             {
                 int userId = Convert.ToInt32(Request.QueryString["userId"]);
                 ViewState["userId"] = userId;
-                //hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
                 string connStrg = WebConfigurationManager.ConnectionStrings["AppDbInt"].ConnectionString;
                 db = new DataBase(connStrg);
                 string sqlCmd = $"SELECT AutoId, CONCAT(Marke,' (',Kennzeichen,')') AS newBez FROM fahrgemeinschaft_auto where UserId like '{userId}'";
