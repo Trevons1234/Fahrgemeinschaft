@@ -46,10 +46,16 @@ namespace Bewertungen
             if(txtKennzeichen.Text == "") throw new Exception();
             if(txtAnzSitzpläze.Text == "") throw new Exception();
             if(userId <= 0) throw new Exception();
+            string raucherauto = "";
+            if (Convert.ToInt32(rblRaucherauto.SelectedValue) == 0)
+            {
+                raucherauto = "Ja";
+            }
+            else raucherauto = "Nein";
             try
             {
                 conn.Open();
-                string sqlInsCmd = $"INSERT INTO fahrgemeinschaft_auto (Marke,Kennzeichen,Sitzplätze,Raucherauto, UserId) VALUES('{ddlAutomarke.SelectedItem.Text}','{txtKennzeichen.Text}',{txtAnzSitzpläze.Text},{rblRaucherauto.SelectedValue}, {userId})";
+                string sqlInsCmd = $"INSERT INTO fahrgemeinschaft_auto (Marke,Kennzeichen,Sitzplätze,Raucherauto, UserId) VALUES('{ddlAutomarke.SelectedItem.Text}','{txtKennzeichen.Text}',{txtAnzSitzpläze.Text},'{raucherauto}', {userId})";
                 OdbcCommand cmd = new OdbcCommand(sqlInsCmd, conn);
                 cmd.ExecuteNonQuery();
             }

@@ -73,7 +73,7 @@ namespace Bewertungen
                 OdbcCommand cmd = new OdbcCommand(sqlInsCmd, conn);
                 cmd.ExecuteNonQuery();
                 lbl_info.Text = "Fahrt wurde angelegt!";
-                Response.Redirect("Page.aspx");
+                Response.Redirect("Page.aspx?userId="+userId);
             }
             catch (Exception ex) 
             {
