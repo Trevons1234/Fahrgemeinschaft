@@ -72,9 +72,32 @@ namespace Bewertungen
             gv_Data.DataSource = dt;
             gv_Data.DataBind();
         }
-        protected void btn_Buchen_Click(object sender, EventArgs e)
+        protected void gv_Data_RowCommand(Object sender, GridViewCommandEventArgs e)
         {
+            if (e.CommandName == "btn_Buchen_Click")
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+                GridViewRow row = gv_Data.Rows[index];
+                string kennzeichen = row.Cells[5].Text;
+                string command = $"SELECT UserId from fahrgemeinschaft_auto WHERE Kennzeichen LIKE '{kennzeichen}'";
+                int userId = 0;
+                string command2 = $"SELECT Vorname, Nachname, TelNr from fahrgemeinschaft_user WHERE UserId LIKE {userId}";
+                DataTable dt = new DataTable();
+                DataBase db = new DataBase(connStrg);
+                try
+                {
+                    userId = Convert.ToInt32(db.RunQueryScalar(command));
+                    command = $"SELECT Vorname, Nachname, TelNr from fahrgemeinschaft_user WHERE UserId LIKE '{userId}'";
+                    dt = db.RunQuery(command2);
+                }
+                catch (Exception)
+                {
 
+                    throw;
+                }
+
+
+            }
         }
     }
 }

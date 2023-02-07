@@ -59,9 +59,9 @@
 
             <asp:Button ID="btn_suchen" runat="server" type="submit" class="btn btn-dark text-center" OnClick="btn_suchen_Click" Text="Suchen" Width="155px" />
             <br />
-            <asp:GridView ID="gv_Data" runat="server">
+            <asp:GridView ID="gv_Data" runat="server" OnRowCommand="gv_Data_RowCommand">
                 <Columns>
-                    <asp:Button ID="btn_Buchen" runat="server" type="submit" class="btn btn-dark text-center" OnClick="btn_Buchen_Click" Text="Buchen" Width="155px"/>
+                    <asp:ButtonField ButtonType="Button" Text="Buchen" CommandName="btn_Buchen_Click" />
                 </Columns>
             </asp:GridView>
          
