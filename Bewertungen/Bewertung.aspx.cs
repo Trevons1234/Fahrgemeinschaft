@@ -50,8 +50,6 @@ namespace Bewertungen
             DataTable dt = new DataTable();
             try
             {
-                OdbcConnection conn = new OdbcConnection(connStrg);
-                conn.Open();
                 string sqlCmdGetAvgAndSumBewertungen = $"SELECT SumBewertungen, AvgBewertungen from fahrgemeinschaft_user WHERE UserId = {userId}";
                 dt = db.RunQuery(sqlCmdGetAvgAndSumBewertungen);
                 double sumBewertung = Convert.ToDouble(dt.Rows[0][0]);
@@ -60,13 +58,13 @@ namespace Bewertungen
                 double newAvgBewertung = (sumBewertung * avgBewertung + rating) / sumBewertung;
                 double avgBewertung1 = Math.Round(newAvgBewertung, 2);
                 string updateBewertung = $"UPDATE fahrgemeinschaft_user SET SumBewertungen = {sumBewertung}, AvgBewertungen = '{avgBewertung1}' WHERE UserId = {userId}";
-                db.RunQuery(updateBewertung);
-                conn.Close();
+                db.RunNonQuery(updateBewertung);
             }
             catch (Exception)
             {
                 lblErg.Text = "You can't rate this user, I'm sorry";
             }
+            Response.Redirect("Page.aspx?userId=" + userId);
 
         }
     }

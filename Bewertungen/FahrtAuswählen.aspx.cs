@@ -81,14 +81,13 @@ namespace Bewertungen
                 string kennzeichen = row.Cells[5].Text;
                 string command = $"SELECT UserId from fahrgemeinschaft_auto WHERE Kennzeichen LIKE '{kennzeichen}'";
                 int userId = 0;
-                string command2 = $"SELECT Vorname, Nachname, TelNr from fahrgemeinschaft_user WHERE UserId LIKE {userId}";
                 DataTable dt = new DataTable();
                 DataBase db = new DataBase(connStrg);
                 try
                 {
                     userId = Convert.ToInt32(db.RunQueryScalar(command));
+                    string command2 = $"SELECT Vorname, Nachname, TelNr from fahrgemeinschaft_user WHERE UserId LIKE {userId}";
                     ViewState["UserId"] = userId;
-                    command = $"SELECT Vorname, Nachname, TelNr from fahrgemeinschaft_user WHERE UserId LIKE {userId}";
                     dt = db.RunQuery(command2);
                 }
                 catch (Exception)
@@ -98,8 +97,6 @@ namespace Bewertungen
                 btn_Bewerten.Visible = true;
                 gv_FahrerDaten.DataSource = dt;
                 gv_FahrerDaten.DataBind();
-
-
             }
         }
         protected void btn_Bewerten_Click(object sender, EventArgs e)
