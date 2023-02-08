@@ -13,6 +13,8 @@ namespace Bewertungen
         {
             int userId = Convert.ToInt32(Request.QueryString["userId"]);
             ViewState["userId"] = userId;
+            btnLogIn.Visible = false;
+            btnSignUp.Visible = false;
         }
 
         protected void ibnFahrtAnlegen_Click(object sender, ImageClickEventArgs e)

@@ -24,7 +24,7 @@ namespace Bewertungen
         {
             string startZeit = txt_StartZeit.Text;
             string endZeit = txt_EndZeit.Text;
-            int raucherAuto = 0; //1 == Raucherauto
+            string raucherAuto = "Nein"; //1 == Raucherauto
             string ort = txt_Ort.Text;
             string command = $"SELECT Strecke, Startzeit, Ankunft,Preis, fahrgemeinschaft_auto.Kennzeichen, fahrgemeinschaft_auto.Sitzplätze, fahrgemeinschaft_auto.Raucherauto, fahrgemeinschaft_user.AvgBewertungen FROM fahrgemeinschaft_fahrt JOIN fahrgemeinschaft_auto ON fahrgemeinschaft_fahrt.AutoId = fahrgemeinschaft_auto.AutoId JOIN fahrgemeinschaft_user ON fahrgemeinschaft_user.UserId = fahrgemeinschaft_fahrt.UserId Where ";
             if (cb_Bewertung.Checked && Convert.ToInt32(txtBewertung.Text) >= 1 && Convert.ToInt32(txtBewertung.Text) <= 5)
@@ -43,13 +43,13 @@ namespace Bewertungen
             if (cb_Preis.Checked && Convert.ToDouble(txtMaxPreis.Text) > 1)
             {
                 double preis = Convert.ToDouble(txtMaxPreis.Text);
-                string cmdPreis = $"Preis <= {preis} AND  ";
+                string cmdPreis = $"Preis <= {preis} AND ";
                 command += cmdPreis;
             }
             if (cb_Raucher.Checked)
             {
-                raucherAuto = 1;
-                string cmdRaucherauto = $"Raucherauto like '{raucherAuto}' AND  ";
+                raucherAuto = "Ja";
+                string cmdRaucherauto = $"Raucherauto like '{raucherAuto}' AND ";
                 command += cmdRaucherauto;
             }
             string temp = ort;
