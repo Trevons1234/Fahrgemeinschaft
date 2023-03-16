@@ -14,7 +14,7 @@
 
         <div class="card text-white bg-dark w-50 h-15 mx-auto">
             <div class="card-body text-center">
-                <h1>Login</h1>
+                <h1>Logi</h1>
             </div>
         </div>
 
