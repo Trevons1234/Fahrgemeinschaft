@@ -14,7 +14,7 @@ namespace Bewertungen
     public partial class FahrtAuswählen : System.Web.UI.Page
     {
         DataBase db;
-        string connStrg = WebConfigurationManager.ConnectionStrings["AppDbInt"].ConnectionString;
+        string connStrg = WebConfigurationManager.ConnectionStrings["AppDbAzure"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
             btn_Bewerten.Visible= false;

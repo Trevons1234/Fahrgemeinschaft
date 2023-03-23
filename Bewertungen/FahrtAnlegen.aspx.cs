@@ -12,7 +12,7 @@ namespace Bewertungen
 {
     public partial class Fahrt_anlegen : System.Web.UI.Page
     {
-        static string connStrg = WebConfigurationManager.ConnectionStrings["AppDbInt"].ConnectionString;
+        static string connStrg = WebConfigurationManager.ConnectionStrings["AppDbAzure"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
             string auto = Request.QueryString["auto"].ToString();

@@ -16,7 +16,7 @@ namespace Bewertungen
     {
         int autoId = 0;
         DataBase db;
-        static string connStrg = WebConfigurationManager.ConnectionStrings["AppDbInt"].ConnectionString;
+        static string connStrg = WebConfigurationManager.ConnectionStrings["AppDbAzure"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
